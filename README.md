@@ -26,9 +26,7 @@ Pet-проект по продуктовой аналитике: EDA отток�
 
 ## Дашборд
 
-
-https://github.com/user-attachments/assets/2fbc1a4b-bc0c-45bb-a74f-22839d766294
-
+![Демонстрация дашборда](assets/dashboard-demo.gif)
 
 ## Дизайн A/B-теста
 
