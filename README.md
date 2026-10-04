@@ -36,3 +36,56 @@ Pet-проект по продуктовой аналитике: анализ о
 - **Apache Superset** (Docker) — BI-дашборд
 
 ## Структура репозитория
+bank-churn-to-retention/
+├── data/
+│ └── raw/ # исходный датасет с Kaggle
+├── notebooks/
+│ └── 01_eda.ipynb # EDA, очистка данных, загрузка в PostgreSQL
+├── requirements.txt
+└── README.md
+
+
+## Установка и запуск
+
+### 1. Клонируйте репозиторий
+
+```bash
+git clone https://github.com/darialiapun/bank-churn-to-retention.git
+cd bank-churn-to-retention
+```
+
+### 2. Настройте окружение Python
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### 3. Поднимите PostgreSQL
+
+Установите [Postgres.app](https://postgresapp.com/) и создайте базу данных `bank_churn_to_retention`.
+
+### 4. Загрузите данные
+
+Откройте `notebooks/01_eda.ipynb` и выполните ячейки — ноутбук очистит данные и загрузит их в таблицу `customers` в PostgreSQL (10 000 строк, 18 колонок).
+
+### 5. Поднимите Apache Superset
+
+Superset — отдельный open-source проект, его нужно развернуть локально по [официальной инструкции](https://superset.apache.org/docs/quickstart) (через Docker Compose). После запуска подключите в Superset базу `bank_churn_to_retention` через адрес `host.docker.internal:5432` — именно так Docker-контейнер видит PostgreSQL, запущенный на хосте.
+
+### 6. Откройте дашборд
+
+В интерфейсе Superset (`localhost:8088`) создайте датасет на таблице `customers` и соберите графики — либо импортируйте готовую конфигурацию дашборда, если она приложена к репозиторию.
+
+## Скриншоты
+
+*(добавить после финальной сборки дашборда)*
+
+## Roadmap
+
+- [x] EDA и формулирование гипотез
+- [x] Загрузка данных в PostgreSQL
+- [x] Дашборд в Apache Superset
+- [ ] Симулированный A/B-тест на удержание
+- [ ] Финальный отчёт с рекомендациями
