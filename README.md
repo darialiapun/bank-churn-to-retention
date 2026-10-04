@@ -125,14 +125,3 @@ Superset — отдельный open-source проект, его нужно ра
 
 В интерфейсе Superset (`localhost:8088`) создайте датасет на таблице `customers` и соберите графики.
 
-## Структура репозитория
-
-```
-bank-churn-to-retention/
-├── data/
-│   └── raw/              # исходный датасет с Kaggle
-├── notebooks/
-│   └── 01_eda.ipynb      # EDA, очистка данных, загрузка в PostgreSQL
-├── requirements.txt
-└── README.md
-```
